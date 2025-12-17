@@ -20,11 +20,18 @@ git clone https://github.com/Juan2007-sys/Aplicacion-Monitoreo.Ts.git
 cd Aplicacion-Monitoreo.Ts
 ```
 
-### 2. Reconstruir módulos (importante)
+### 2. Instalar dependencias
 ```bash
 npm install
 ```
 **Nota:** `node_modules/`, `dist/`, `logs/` y `.env` están en `.gitignore`, por lo que deben generarse localmente.
+
+**Librerías que se instalan automáticamente:**
+- `nodemailer` - Envío de emails
+- `cron` - Tareas programadas
+- `dotenv` - Variables de entorno
+- `env-var` - Validación de variables
+- `typescript`, `ts-node-dev` - Compilación y desarrollo
 
 ### 3. Configurar `.env`
 ```env
@@ -45,8 +52,15 @@ npm start        # Producción
 
 ## 📦 Dependencias
 
-**Producción:** `cron`, `dotenv`, `env-var`  
+**Producción:** `cron`, `dotenv`, `env-var`, `nodemailer`  
 **Desarrollo:** `typescript`, `ts-node-dev`, `@types/node`, `rimraf`
+
+**Librerías que se instalan automáticamente:**
+- `nodemailer` - Envío de emails
+- `cron` - Tareas programadas
+- `dotenv` - Variables de entorno
+- `env-var` - Validación de variables
+- `typescript`, `ts-node-dev` - Compilación y desarrollo
 
 ## 🔧 Funcionamiento
 
