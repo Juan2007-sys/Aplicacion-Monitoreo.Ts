@@ -20,5 +20,14 @@
   },
   "dependencies": {
     "cron": "^4.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juan2007-sys/Aplicacion-Monitoreo.Ts.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Juan2007-sys/Aplicacion-Monitoreo.Ts/issues"
+  },
+  "homepage": "https://github.com/Juan2007-sys/Aplicacion-Monitoreo.Ts#readme"
 }
