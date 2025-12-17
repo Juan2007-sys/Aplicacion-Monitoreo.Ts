@@ -63,7 +63,7 @@ TypeScript • Node.js • Cron • Clean Architecture
 
 ## 👨‍💻 Autor
 
-**Juan Valle** - [@Juan2007-sys](https://github.com/Juan2007-sys)
+**Juan Ovalle** - [@Juan2007-sys](https://github.com/Juan2007-sys)
 
 ## 📄 Licencia
 
