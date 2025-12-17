@@ -14,14 +14,19 @@ src/
 
 ## 🚀 Instalación
 
-### 1. Clonar e instalar
+### 1. Clonar el repositorio
 ```bash
 git clone https://github.com/Juan2007-sys/Aplicacion-Monitoreo.Ts.git
 cd Aplicacion-Monitoreo.Ts
-npm install
 ```
 
-### 2. Configurar `.env`
+### 2. Reconstruir módulos (importante)
+```bash
+npm install
+```
+**Nota:** `node_modules/`, `dist/`, `logs/` y `.env` están en `.gitignore`, por lo que deben generarse localmente.
+
+### 3. Configurar `.env`
 ```env
 PORT=3000
 MAILER_EMAIL=tu_email@example.com

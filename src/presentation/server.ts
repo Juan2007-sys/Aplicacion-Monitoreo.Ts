@@ -14,23 +14,25 @@ class Server {
     public static start(): void {
         console.log("Server started...");
 
+        // Mandar Email 
+
         // Crea un job que verifica el servicio cada 5 segundos
         // Inyecta callbacks para manejar éxito y error
-        CronService.createJob(
-            '*/5 * * * * *',
-            () => {
-                const url = 'https://localhost:3000';
+        // CronService.createJob(
+        //     '*/5 * * * * *',
+        //     () => {
+        //         const url = 'https://google.com';
                 
 
-                // Instancia el use case con handlers específicos
-                new CheckService(
-					fileSystemLogRepository,
-                    () => console.log(`${url} check succeeded.`),
-                    (error) => console.log(error)
-                ).execute(url)
+        //         // Instancia el use case con handlers específicos
+        //         new CheckService(
+		// 			fileSystemLogRepository,
+        //             () => console.log(`${url} check succeeded.`),
+        //             (error) => console.log(error)
+        //         ).execute(url)
                 
-            }
-        );	
+        //     }
+        // );	
 		
     }
 }
