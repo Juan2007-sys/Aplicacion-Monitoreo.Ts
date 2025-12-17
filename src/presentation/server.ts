@@ -1,27 +1,38 @@
-import { CronJob } from "cron";
+
 import { CronService } from "./cron/cron-service";
 import { CheckService } from "../domain/use-cases/checks/check-service";
+import { LogRepositoryImpl } from "../infrastructure/repositories/log.respository.impl";
+import { FileSystemDataSource } from "../infrastructure/datasources/file-system.datasources";
 
+const fileSystemLogRepository = new LogRepositoryImpl(
+	new FileSystemDataSource()
+);
 
-class Server{
-	public static start(): void {
-		console.log("Server started...");
+// Presentation Layer - Orquestación de la aplicación
+// Coordina use cases y servicios de infraestructura
+class Server {
+    public static start(): void {
+        console.log("Server started...");
 
-		CronService.createJob(
-			'*/5 * * * * *',
-			() => {
-				const url = 'https://www.google.com';
+        // Crea un job que verifica el servicio cada 5 segundos
+        // Inyecta callbacks para manejar éxito y error
+        CronService.createJob(
+            '*/5 * * * * *',
+            () => {
+                const url = 'https://localhost:3000';
+                
 
-				new CheckService(
-					() => console.log(`${url} check succeeded.`),
-					(error) => console.log(error)
-				).execute(url)
-				// new CheckService().execute('http://localhost:3000')
-				
-			}
-		);	
+                // Instancia el use case con handlers específicos
+                new CheckService(
+					fileSystemLogRepository,
+                    () => console.log(`${url} check succeeded.`),
+                    (error) => console.log(error)
+                ).execute(url)
+                
+            }
+        );	
 		
-	}
+    }
 }
 
 export = { Server };
