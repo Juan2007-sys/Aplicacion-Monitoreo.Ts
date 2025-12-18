@@ -9,6 +9,6 @@ export const envs = {
     MAILER_EMAIL: env.get('MAILER_EMAIL').required().asEmailString(), // Email para envío de notificaciones
     MAILER_PASSWORD_KEY: env.get('MAILER_SECRET_KEY').required().asString(), // Contraseña/token del servicio de email
     PROD: env.get('PROD').required().asBool(), // Indica si está en producción o desarrollo
-    
-    
+    MAILER_SERVICE: env.get('MAILER_SERVICE').required().asString(), // Servicio de email (e.g., 'gmail')
+
 }
